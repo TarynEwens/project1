@@ -7,12 +7,25 @@
   max-height: 10em;
 }
 
-.feature {
-  max-width: 100%;
+.profile-large {
+  max-width: 200px;
   display: inline-block;
   margin: 1em auto;
 }
 
+.user-name {
+  font-weight: 700;
+}
+
+.main-header {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 3em;
+}
+
+.hide {
+  display: none;
+}
 
 @import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
 

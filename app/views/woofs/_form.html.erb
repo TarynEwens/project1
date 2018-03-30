@@ -1,0 +1,21 @@
+<% if @current_user.present? %>
+
+<% if @woof.errors.any? %>
+  <ol>
+    <% @woof.errors.full_messages.each do |msg| %>
+      <li><%= msg.capitalize %></li>
+    <% end %>
+  </ol>
+<% end %>
+
+<%= form_for @woof do |f| %>
+  <%= f.label :status %>
+  <%= f.text_field :status %>
+
+  <%= f.hidden_field :user_id, value: @current_user.id %>
+
+  <%= f.submit %>
+
+<% end %>
+
+<% end %>

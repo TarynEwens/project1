@@ -1,0 +1,21 @@
+<h1>Edit Profile: <%= @user.name %></h1>
+
+<%= form_for @user do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :bio, "Biography" %>
+  <%= f.text_field :bio %>
+
+  <%= f.label :dob, 'Date of Birth' %>
+  <%= f.text_field :dob %>
+
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+
+  <%= f.label :image %>
+  <%= f.url_field :image %>
+
+  <%= f.submit %>
+
+<% end %>

@@ -1,0 +1,12 @@
+<h1>Doggos</h1>
+
+
+  <ul>
+    <% @users.each do |user| %>
+      <li><span class="user-name"><%= link_to user.name , user %></span>
+      <% if user.bio.present? %>
+      <%= user.bio %>
+      <% end %>
+
+    <% end %>
+  </ul>
