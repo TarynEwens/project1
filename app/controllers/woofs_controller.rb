@@ -10,7 +10,7 @@ class WoofsController < ApplicationController
   end
 
   def create
-    woof = Woof.create woof_params
+    woof = @current_user.woofs.create woof_params
     redirect_to root_path
   end
 
@@ -21,7 +21,7 @@ class WoofsController < ApplicationController
   def update
     woof = Woof.find params[:id]
     woof.update woof_params
-    redirect_to artist
+    redirect_to root_path
   end
 
   def show
@@ -37,6 +37,6 @@ class WoofsController < ApplicationController
 
   private
   def woof_params
-    params.require(:status).permit(:user_id, :image)
+    params.require(:woof).permit(:status, :user_id, :image)
   end
 end

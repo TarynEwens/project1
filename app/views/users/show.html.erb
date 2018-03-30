@@ -1,7 +1,6 @@
 <h1><%= @user.name %></h1>
 
   <ul>
-    <li><%= @user.name %></li>
     <% if @user.bio.present? %>
       <li><%= @user.bio %></li>
     <% end %>
@@ -22,7 +21,8 @@
 <ul>
   <% @user.woofs.each do |woof| %>
   <li>
-    <%= woof.status %> <BR/><%= woof.created_at %>
+    <%= woof.status %> <BR/>
+    <%= time_ago_in_words(woof.created_at)  %>
   </li>
   <% end %>
 </ul>

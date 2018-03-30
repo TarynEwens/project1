@@ -2,9 +2,15 @@
 
 <% if @current_user.present? %>
 
-<% @woofs.each do |woof| %>
+<% @woofs.order(:created_at).reverse.first(20).each do |woof| %>
   <ul class="woofs">
-    <li><span class="user-name"><%= woof.user.name %></span> <%= woof.status %></li>
+    <li><span class="user-name"><%= woof.user.name %></span> <%= woof.status %><BR/>
+    <%= time_ago_in_words(woof.created_at)  %>
+    <BR/>
+      <div class="woof-controls">
+        <%= link_to 'Edit', edit_woof_path(woof)%>
+        <%= link_to 'Delete', woof, :method => 'delete', :data => { :confirm => 'Are you sure?' }%>
+      </div></li>
   </ul>
 <% end %>
 
