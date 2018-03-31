@@ -19,16 +19,18 @@
 <% unless @user.woofs.empty? %>
 <h2>Woofs</h2>
 <ul>
-  <% @user.woofs.each do |woof| %>
+  <% @user.woofs.order(:created_at).reverse.first(20).each do |woof| %>
   <li>
     <%= woof.status %> <BR/>
-    <%= time_ago_in_words(woof.created_at)  %>
+    <%= time_ago_in_words(woof.created_at)  %> ago
   </li>
   <% end %>
 </ul>
 <% end %>
 
+<% if @current_user.id == @user.id %>
 <div class="controls">
   <%= link_to 'Edit Profile', edit_user_path(@current_user)%>
   <%= button_to 'Delete account', @user, :method => 'delete', :data => { :confirm => 'Are you sure?' }%>
 </div>
+<% end %>
