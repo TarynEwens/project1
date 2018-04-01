@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
+      flash[:success] = "Welcome to WOOFER!"
       redirect_to root_path # it worked!
     else
       render :new
@@ -45,6 +46,12 @@ class UsersController < ApplicationController
     @user  = User.find(params[:id])
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
+  end
+
+  def destroy
+    user = User.find params[:id]
+    user.destroy
+    redirect_to root_path
   end
 
 
