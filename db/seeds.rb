@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-u1 = User.create :email => 'lexi@taryn.codes', :password => 'chicken', :name => 'Lexi', :image => 'http://taryn.codes/candyimages/IMG_0472.jpg'
+u1 = User.create :email => 'lexi@taryn.codes', :password => 'chicken', :name => 'Lexi', :image => 'http://taryn.codes/candyimages/IMG_0472.jpg', :admin => true
 u2 = User.create :email => 'pepper@taryn.codes', :password => 'chicken', :name => 'Pepper', :image => 'http://taryn.codes/candyimages/Resized_20170928_205406.jpeg'
 u3 = User.create :email => 'pumpum@taryn.codes', :password => 'chicken', :name => 'Pum Pum', :image => 'http://taryn.codes/candyimages/Image-1.jpg'
 

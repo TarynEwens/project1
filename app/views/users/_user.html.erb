@@ -1,0 +1,12 @@
+<li>
+  <% if user.image.present? %>
+  <div class="small-circle-img">
+    <%= image_tag user.image, :alt => user.name%>
+  </div>
+  <% end %>
+  <%= link_to user.name, user %>
+  <% if current_user.admin? && !current_user?(user) %>
+    | <%= link_to "delete", user, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+  <% end %>
+</li>
