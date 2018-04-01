@@ -30,6 +30,9 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'bootstrap-sass', '3.3.7'
+gem 'bootstrap', '~> 4.0.0'
+gem "will_paginate", "~> 3.0.4"
 gem 'jquery-rails' # USING JQUERY Also need to add this to application.js
 
 # Use Capistrano for deployment

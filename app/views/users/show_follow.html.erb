@@ -1,0 +1,21 @@
+<% provide(:title, "Following") %>
+      <h1><%= @user.name %></h1>
+      <span><%= link_to "view my profile", @user %></span>
+      <span><b>Woofs:</b> <%= @user.woofs.count %></span>
+
+      <section class="stats">
+        <%= render 'shared/stats' %>
+
+      </section>
+
+      <h2>Following:</h2>
+      <ul>
+        <% @user.following.each do |user| %>
+          <li><span class="user-name"><%= link_to user.name , user %></span>
+          <% if user.bio.present? %>
+          <%= user.bio %>
+
+          <% end %>
+
+        <% end %>
+      </ul>

@@ -1,4 +1,7 @@
+<% provide(:title, "Profile") %>
+
 <h1><%= @user.name %></h1>
+<%= render 'shared/follow_form' if @current_user.present?  %>
 
   <ul>
     <% if @user.bio.present? %>
@@ -12,25 +15,29 @@
     <% end %>
   </ul>
 
-<% if @user.image.present? %>
-<%= image_tag @user.image, :alt => @user.name, :class => 'profile-large'%>
-<% end %>
+  <section class="stats">
+      <%= render 'shared/stats' %>
+  </section>
 
-<% unless @user.woofs.empty? %>
-<h2>Woofs</h2>
-<ul>
-  <% @user.woofs.order(:created_at).reverse.first(20).each do |woof| %>
-  <li>
-    <%= woof.status %> <BR/>
-    <%= time_ago_in_words(woof.created_at)  %> ago
-  </li>
+  <% if @user.image.present? %>
+  <%= image_tag @user.image, :alt => @user.name, :class => 'profile-large'%>
   <% end %>
-</ul>
-<% end %>
 
-<% if @current_user.id == @user.id %>
-<div class="controls">
-  <%= link_to 'Edit Profile', edit_user_path(@current_user)%>
-  <%= button_to 'Delete account', @user, :method => 'delete', :data => { :confirm => 'Are you sure?' }%>
-</div>
+  <% unless @user.woofs.empty? %>
+  <h2>Woofs</h2>
+  <ul>
+    <% @user.woofs.order(:created_at).reverse.first(20).each do |woof| %>
+    <li>
+      <%= woof.status %> <BR/>
+      <%= time_ago_in_words(woof.created_at)  %> ago
+    </li>
+    <% end %>
+  </ul>
+  <% end %>
+
+  <% if @current_user.id == @user.id %>
+  <div class="controls">
+    <%= link_to 'Edit Profile', edit_user_path(@current_user)%>
+    <%= button_to 'Delete account', @user, :method => 'delete', :data => { :confirm => 'Are you sure?' }%>
+  </div>
 <% end %>

@@ -1,5 +1,7 @@
 {
   "name": "project1",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^4.0.0"
+  }
 }

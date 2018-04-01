@@ -3,5 +3,10 @@ class PagesController < ApplicationController
     @woofs = Woof.all
   end
 
+  def contact
+  end
+
+  def about
+  end
 
 end
