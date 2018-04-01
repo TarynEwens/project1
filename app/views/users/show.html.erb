@@ -43,14 +43,12 @@
   </ul>
 
 
-  <% unless @user.woofs.empty? %>
-  <h2>Woofs</h2>
-  <ul>
-    <% @user.woofs.order(:created_at).reverse.first(20).each do |woof| %>
-    <li>
-      <%= woof.status %> <BR/>
-      <%= time_ago_in_words(woof.created_at)  %> ago
-    </li>
-    <% end %>
-  </ul>
+  <div class="col-md-8">
+  <% if @user.woofs.any? %>
+    <h3>Microposts (<%= @user.woofs.count %>)</h3>
+    <ol class="woofs">
+      <%= render @woofs %>
+    </ol>
+    <%= will_paginate @woofs %>
   <% end %>
+</div>

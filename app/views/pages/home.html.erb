@@ -11,13 +11,7 @@
   <ul class="woofs">
     <li><span class="user-name"><%= woof.user.name %></span> <%= woof.status %><BR/>
     <%= time_ago_in_words(woof.created_at)  %> ago
-    <BR/>
-    <% if @current_user.id == woof.user.id %>
-      <div class="woof-controls">
-        <%= link_to 'Edit', edit_woof_path(woof)%>
-        <%= link_to 'Delete', woof, :method => 'delete', :data => { :confirm => 'Are you sure?' }%>
-      </div></li>
-      <% end %>
+    </li>
   </ul>
 
 <% end %>

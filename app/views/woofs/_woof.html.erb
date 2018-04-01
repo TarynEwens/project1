@@ -1,0 +1,7 @@
+<li id="woof-<%= woof.id %>">
+  <span class="user"><%= link_to woof.user.name, woof.user %></span>
+  <span class="status"><%= woof.status %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(woof.created_at) %> ago.
+  </span>
+</li>
