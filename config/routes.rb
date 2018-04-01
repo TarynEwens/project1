@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :woofs
   get '/login' => 'sessions#new' # sign in form
   post '/login' => 'sessions#create' # sign in action
-  delete '/login' => 'sessions#destroy' # sign out
+  delete '/logout' => 'sessions#destroy' # sign out
   get '/contact' => 'pages#contact'
   get  '/about' => 'pages#about'
 

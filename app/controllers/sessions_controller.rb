@@ -8,11 +8,11 @@ class SessionsController < ApplicationController
     # If the password authenticates
     if @user.present? && @user.authenticate(params[:password])
       # Remember this user in the session
-      session[:user_id] = @user.id
-      redirect_to root_path
+      log_in @user
+      redirect_to @user
     # else
     else
-      flash[:error] = "Invalid email or password"
+      flash[:danger] = "Invalid email or password"
       # send them to the login page again
       redirect_to login_path
     end

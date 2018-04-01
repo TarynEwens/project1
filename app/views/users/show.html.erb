@@ -55,9 +55,8 @@
   </ul>
   <% end %>
 
-  <% if @current_user.id == @user.id %>
+
   <div class="controls">
-    <%= link_to 'Edit Profile', edit_user_path(@current_user)%>
+    <%= link_to 'Edit Profile', edit_user_path(@user)%>
     <%= button_to 'Delete account', @user, :method => 'delete', :data => { :confirm => 'Are you sure?' }%>
   </div>
-<% end %>
