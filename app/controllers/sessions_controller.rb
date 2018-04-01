@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
     if @user.present? && @user.authenticate(params[:password])
       # Remember this user in the session
       log_in @user
+      params[:remember_token] == '1' ? remember(@user) : forget(@user)
       redirect_to @user
     # else
     else
@@ -19,7 +20,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
+    log_out if logged_in?
     redirect_to root_path
   end
 

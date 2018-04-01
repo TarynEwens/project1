@@ -13,7 +13,13 @@
       <%= label_tag :password %>
       <%= password_field_tag :password %>
 
+      <%= label_tag :remember_token, class: "checkbox inline" do %>
+       <%= check_box_tag :remember_token %>
+       <span>Remember me on this computer</span>
+     <% end %>
+
       <%= submit_tag "Log in", :class =>"btn btn-primary"%>
+
     <% end %>
 
     <p>New user? <%= link_to "Sign up now!", new_user_path %></p>
