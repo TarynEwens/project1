@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       # Remember this user in the session
       log_in @user
       params[:remember_token] == '1' ? remember(@user) : forget(@user)
-      redirect_to @user
+      redirect_back_or @user
     # else
     else
       flash[:danger] = "Invalid email or password"

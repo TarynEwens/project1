@@ -102,18 +102,27 @@ footer {
 }
 
 /* images */
-.circle-img {
+.small-circle-img {
+  width: 75px;
+  display: inline-block;
+  margin: 2em;
+
+}
+.small-circle-img img {
+  width: 75px;
+  height: 75px;
+  display: inline-block;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.circle-img img {
   width: 200px;
   height: 200px;
   overflow: hidden;
   display: inline-block;
+  border-radius: 50%;
   margin: 0 auto;
-}
-
-.circle-img img {
-  width: 100%;
-  transform: translateX(-50%);
-  margin-left: 50%;
 }
 
 /* sidebar */
@@ -185,4 +194,22 @@ input {
 #session_remember_me {
   width: auto;
   margin-left: 0;
+}
+
+.delete-account {
+  padding: 2em;
+  width: 15em;
+  margin: 1em auto;
+}
+
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
 }

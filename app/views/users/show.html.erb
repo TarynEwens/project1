@@ -9,7 +9,7 @@
           <%= @user.name %>
         </div>
         <% if @user.image.present? %>
-        <div class="circle-img img-circle">
+        <div class="circle-img">
           <%= image_tag @user.image, :alt => @user.name%>
         </div>
         <% end %>
@@ -54,9 +54,3 @@
     <% end %>
   </ul>
   <% end %>
-
-
-  <div class="controls">
-    <%= link_to 'Edit Profile', edit_user_path(@user)%>
-    <%= button_to 'Delete account', @user, :method => 'delete', :data => { :confirm => 'Are you sure?' }%>
-  </div>
