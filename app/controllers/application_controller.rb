@@ -8,4 +8,14 @@ class ApplicationController < ActionController::Base
     @current_user = User.find_by :id => session[:user_id] if session[:user_id].present?
     session[:user_id] = nil unless @current_user.present? # This prevents horrors if you reseed.
   end
+
+  # Confirms a logged-in user.
+  def logged_in_user
+     unless logged_in?
+       store_location
+       flash[:danger] = "Please log in."
+       redirect_to login_url
+     end
+  end
+
 end

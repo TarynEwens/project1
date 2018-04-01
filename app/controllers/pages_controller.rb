@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @woofs = Woof.all
+    @woof = current_user.woofs.build if logged_in?
   end
 
   def contact

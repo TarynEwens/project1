@@ -1,20 +1,16 @@
 <% provide(:title, "Home") %>
 
-<% if @current_user.present? %>
-
-<section class="stats">
-  <%= render 'shared/stats' %>
-</section>
-
-
-<% @woofs.each do |woof| %>
-  <ul class="woofs">
-    <li><span class="user-name"><%= woof.user.name %></span> <%= woof.status %><BR/>
-    <%= time_ago_in_words(woof.created_at)  %> ago
-    </li>
-  </ul>
-
-<% end %>
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="woof_form">
+        <%= render 'shared/woof_form' %>
+      </section>
+    </aside>
+  </div>
 
 <% else %>
 
@@ -27,10 +23,5 @@
 
   <%= link_to "Sign up now!", new_user_path, class: "btn btn-lg btn-primary" %>
 </div>
-
-
-
-
-
 
 <% end %>

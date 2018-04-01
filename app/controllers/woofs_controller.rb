@@ -1,4 +1,5 @@
 class WoofsController < ApplicationController
+  before_action :logged_in_user, only: [:create, :destroy]
 
   def index
     @woofs = Woof.all
@@ -10,8 +11,13 @@ class WoofsController < ApplicationController
   end
 
   def create
-    woof = @current_user.woofs.create woof_params
-    redirect_to root_path
+    @woof = current_user.woofs.build(woof_params)
+    if @woof.save
+      flash[:success] = "Woof woofed!"
+      redirect_to root_url
+    else
+      render 'pages/home'
+    end
   end
 
   def edit
