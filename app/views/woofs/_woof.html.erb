@@ -3,5 +3,9 @@
   <span class="status"><%= woof.status %></span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(woof.created_at) %> ago.
+    <% if current_user?(woof.user) %>
+      <%= link_to "delete", woof, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+    <% end %>
   </span>
 </li>

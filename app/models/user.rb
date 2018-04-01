@@ -27,7 +27,7 @@ class User < ApplicationRecord
 
   # Returns a user's status feed.
   def feed
-    Micropost.where("user_id IN (?) OR user_id = ?", following_ids, id)
+    Woof.where("user_id = ?", id)
   end
 
   # Follows a user.
