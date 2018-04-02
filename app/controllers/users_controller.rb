@@ -61,6 +61,10 @@ def update
     render 'show_follow'
   end
 
+
+
+
+
   def destroy
    User.find(params[:id]).destroy
    flash[:success] = "User deleted"
