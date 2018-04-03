@@ -1,7 +1,7 @@
 <%= form_for(@woof) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-    <%= f.text_area :status, placeholder: "Compose new micropost..." %>
+    <%= f.text_area :status, placeholder: "What's woofin'? (max 300 characters)" %>
   </div>
   <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>

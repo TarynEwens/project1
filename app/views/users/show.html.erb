@@ -1,54 +1,58 @@
 <% provide(:title, @user.name) %>
 
+<div class="container">
+      <section class="user_info_header">
 
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <div class="name">
-          <%= @user.name %>
-        </div>
-        <% if @user.image.present? %>
-        <div class="circle-img">
-          <%= image_tag @user.image, :alt => @user.name%>
-        </div>
-        <% end %>
 
-        <div class="follow">
+        <div class="user_info_thirds user_info_sides">
+          <ul>
+            <% if @user.bio.present? %>
+              <li><%= @user.bio %></li>
+            <% end %><BR/>
+            <% if @user.dob.present? %>
+              <li><strong>Born</strong> <%= @user.dob.strftime "%B %-d, %Y"%></li>
+            <% end %>
+            <% if @user.location.present? %>
+            <li><strong>Location</strong> <%= @user.location %></li>
+            <% end %>
+          </ul>
+        </div>
+
+        <div class="user_info_thirds">
+
+            <h1 id="sidebar-name"><%= @user.name %></h1>
+
+          <% if @user.image.present? %>
+          <div class="circle-img">
+            <%= image_tag @user.image, :alt => @user.name%>
+          </div>
+          <% end %>
+        </div>
+
+        <div class="user_info_thirds user_info_sides">
+          <div class="follow">
+
+
+          <section class="stats">
+              <%= render 'shared/stats' %>
+          </section></BR>
           <%= render 'shared/follow_form' if @current_user.present?  %>
-
-        <section class="stats">
-            <%= render 'shared/stats' %>
-        </section>
+          </div>
         </div>
-
-      </h1>
     </section>
-  </aside>
-</div>
 
 
 
 
-  <ul>
-    <% if @user.bio.present? %>
-      <li><%= @user.bio %></li>
+
+
+
+
+    <% if @user.woofs.any? %>
+      <h3 id="woofs-feed">Woofs (<%= @user.woofs.count %>)</h3>
+      <ol class="woofs">
+        <%= render @woofs %>
+      </ol>
+      <%= will_paginate @woofs %>
     <% end %>
-    <% if @user.dob.present? %>
-      <li>Born <%= @user.dob.strftime "%B %-d, %Y"%></li>
-    <% end %>
-    <% if @user.location.present? %>
-    <li>Currently <%= @user.location %></li>
-    <% end %>
-  </ul>
-
-
-  <div class="col-md-8">
-  <% if @user.woofs.any? %>
-    <h3>Microposts (<%= @user.woofs.count %>)</h3>
-    <ol class="woofs">
-      <%= render @woofs %>
-    </ol>
-    <%= will_paginate @woofs %>
-  <% end %>
 </div>

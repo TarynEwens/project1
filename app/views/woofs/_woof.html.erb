@@ -1,11 +1,17 @@
 <li id="woof-<%= woof.id %>">
-  <span class="user"><%= link_to woof.user.name, woof.user %></span>
-  <span class="status"><%= woof.status %></span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(woof.created_at) %> ago.
-    <% if current_user?(woof.user) %>
-      <%= link_to "delete", woof, method: :delete,
-                                       data: { confirm: "You sure?" } %>
-    <% end %>
-  </span>
+  <div class="small-circle-img">
+    <%= image_tag woof.user.image, :alt => woof.user.name%>
+  </div>
+
+  <div class="woof-status">
+    <span class="user"><%= link_to woof.user.name, woof.user %></span>
+    <span class="status"><%= woof.status %></span>
+    <span class="timestamp">
+      Posted <%= time_ago_in_words(woof.created_at) %> ago.
+      <% if current_user?(woof.user) %>
+        <%= link_to "delete", woof, method: :delete,
+                                         data: { confirm: "You sure?" } %>
+      <% end %>
+    </span>
+  </div>
 </li>

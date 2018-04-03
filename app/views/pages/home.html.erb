@@ -1,37 +1,47 @@
 <% provide(:title, "Home") %>
 
 <% if logged_in? %>
-  <div class="row">
-    <aside class="col-md-4">
+<div class="container">
+
+    <aside class="user-sidebar">
       <section class="user_info">
         <%= render 'shared/user_info' %>
       </section>
 
       <section class="stats">
-        <%= render 'shared/stats' %>
+          <%= render 'shared/stats' %>
       </section>
+    </aside>
 
+
+    <main class="main-feed">
       <section class="woof_form">
         <%= render 'shared/woof_form' %>
       </section>
-    </aside>
-  </div>
 
-  <div class="col-md-8">
-     <h3>Woofs Feed</h3>
-     <%= render 'shared/feed' %>
-   </div>
+       <h3>Woofs Feed</h3>
+       <%= render 'shared/feed' %>
+     </main>
+</div>
 
 <% else %>
 
-<div class="center jumbotron">
-  <h1>Welcome to WOOFER</h1>
+<div id="bg-img">
+</div>
+<div class="container">
+  <div class="heading-primary">
+    <h1><span class="heading-primary-sub">Welcome to </span><span class="heading-primary-main">WOOFER</span></h1>
 
-  <h2>
-    Twitter for Dogs - WOOF at your doggo pals!
-  </h2>
+    <p class="heading-secondary">
+    Much wow! Many doggos. Such fun!
+    </p>
 
-  <%= link_to "Sign up now!", new_user_path, class: "btn btn-lg btn-primary" %>
+  </div>
+  <div class="home-signup">
+    <p class="heading-secondary heading-small"><strong>Sign up</strong> your doggo<BR/>
+’woof’ at their pupper friends! </p>
+  <%= render 'users/signup' %>
+  </div>
 </div>
 
 <% end %>

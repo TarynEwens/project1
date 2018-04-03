@@ -1,27 +1,25 @@
 
 <% provide(:title, "Log in") %>
-<h1>Log in</h1>
+<div class="container">
+  <h1>Log in</h1>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_tag login_path do %>
-    <h2><%= flash[:error] %></h2>
+      <%= form_tag login_path do %>
+      <h2><%= flash[:error] %></h2>
 
-      <%= label_tag :email %>
-      <%= email_field_tag :email%>
+        <%= label_tag :email %>
+        <%= email_field_tag :email%>
 
-      <%= label_tag :password %>
-      <%= password_field_tag :password %>
+        <%= label_tag :password %>
+        <%= password_field_tag :password %>
 
-      <%= label_tag :remember_token, class: "checkbox inline" do %>
-       <%= check_box_tag :remember_token %>
-       <span>Remember me on this computer</span>
-     <% end %>
+        <%= label_tag :remember_token, class: "checkbox inline" do %>
+         <%= check_box_tag :remember_token %>
+         <span>Remember me on this computer</span>
+       <% end %>
 
-      <%= submit_tag "Log in", :class =>"btn btn-primary"%>
+        <%= submit_tag "Log in", :class =>"btn btn-primary"%>
 
-    <% end %>
+      <% end %>
 
-    <p>New user? <%= link_to "Sign up now!", new_user_path %></p>
-  </div>
+      <p class="signin-link">New user? <%= link_to "Sign up now!", new_user_path %></p>
 </div>

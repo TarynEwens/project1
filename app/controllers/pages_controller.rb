@@ -3,7 +3,8 @@ class PagesController < ApplicationController
       if logged_in?
         @woof  = current_user.woofs.build
         @feed_items = current_user.feed.paginate(page: params[:page])
-      end  
+      end
+    @user = User.new
   end
 
   def contact

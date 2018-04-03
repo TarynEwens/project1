@@ -4,9 +4,12 @@
     <%= image_tag user.image, :alt => user.name%>
   </div>
   <% end %>
+  <div class="woof-status">
   <%= link_to user.name, user %>
+  <p><%= user.bio %></p>
   <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to "delete", user, method: :delete,
+     <%= link_to "delete", user, method: :delete,
                                   data: { confirm: "You sure?" } %>
   <% end %>
+  </div>
 </li>
