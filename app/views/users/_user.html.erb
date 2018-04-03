@@ -1,9 +1,7 @@
 <li>
-  <% if user.image.present? %>
   <div class="small-circle-img">
-    <%= image_tag user.image, :alt => user.name%>
+    <%= user_image(user)%>
   </div>
-  <% end %>
   <div class="woof-status">
   <%= link_to user.name, user %>
   <p><%= user.bio %></p>

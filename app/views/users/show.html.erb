@@ -22,11 +22,11 @@
 
             <h1 id="sidebar-name"><%= @user.name %></h1>
 
-          <% if @user.image.present? %>
+
           <div class="circle-img">
-            <%= image_tag @user.image, :alt => @user.name%>
+            <%= user_image(@user)%>
           </div>
-          <% end %>
+
         </div>
 
         <div class="user_info_thirds user_info_sides">

@@ -1,6 +1,6 @@
 <li id="woof-<%= woof.id %>">
   <div class="small-circle-img">
-    <%= image_tag woof.user.image, :alt => woof.user.name%>
+    <%= woof_user_image(woof.user)%>
   </div>
 
   <div class="woof-status">

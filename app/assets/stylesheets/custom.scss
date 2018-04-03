@@ -82,7 +82,7 @@ p {
   line-height: 2.6;
   color: $gray-dark;
   &:hover {
-    color: $brand-color;
+    color: $bg-color;
     text-decoration: none;
 
   }
@@ -200,7 +200,7 @@ aside.user-sidebar {
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  width: 500px;
+  width: 100%;
   margin-bottom: 15px;
   @include box_sizing(border-box);
 }
@@ -388,6 +388,7 @@ nav#header-nav{
   color: #2a2627;
   background-color: #FFD69A;
   border-color: #FFD69A;
+  width: 100%;
 }
 
 .btn-primary:hover {

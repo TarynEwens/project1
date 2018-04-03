@@ -1,7 +1,8 @@
 <h1><%= @current_user.name %></h1>
 <div class="circle-img">
-  <%= image_tag @woof.user.image, :alt => @woof.user.name%>
+  <%= user_info_image(@current_user) %>
 </div>
+
 
 
 <section class="stats">
