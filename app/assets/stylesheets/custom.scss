@@ -483,6 +483,10 @@ div.stat:last-child {
   border-color: #C6EADF;
 }
 
+#view-profile-links {
+  margin-top: 10px;
+}
+
 @media only screen and (max-width:992px) { /* Home Feed collapses */
   .container {
     width: 100%;
@@ -514,7 +518,71 @@ div.stat:last-child {
 
 }
 
+@media only screen and (max-width:830px) { /* Signed out home page collapses*/
+
+  .heading-primary {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+  }
+
+  .home-signup {
+    display: block;
+    width: 100%;
+    margin: 10px auto;
+  }
+
+}
+
 @media only screen and (max-width:525px) { /* Home Feed image collapses s*/
+  .small-circle-img {
+    width: 15%;
+    display: inline-block;
+    vertical-align: top;
+
+    .small-circle-img img {
+      max-width: 75px;
+      height: auto;
+      display: inline-block;
+      margin: 0 auto;
+      border-radius: 50%;
+    }
+}
+
+
+  div.woof-status {
+    width: 80%;
+    display: inline-block;
+    margin-left: 20px;
+    word-wrap: break-word;
+  }
+}
+
+@media only screen and (max-width:525px) { /* Home Feed image collapses s*/
+  .small-circle-img {
+    width: 15%;
+    display: inline-block;
+    vertical-align: top;
+
+    .small-circle-img img {
+      max-width: 75px;
+      height: auto;
+      display: inline-block;
+      margin: 0 auto;
+      border-radius: 50%;
+    }
+}
+
+
+  div.woof-status {
+    width: 80%;
+    display: inline-block;
+    margin-left: 20px;
+    word-wrap: break-word;
+  }
+}
+
+@media only screen and (max-width:370px) { /* User Stats collapse s*/
   .small-circle-img {
     width: 15%;
     display: inline-block;
