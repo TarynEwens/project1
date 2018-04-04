@@ -182,16 +182,6 @@ aside.user-sidebar {
   }
 }
 
-.user_avatars {
-  overflow: auto;
-  margin-top: 10px;
-  .gravatar {
-    margin: 1px 1px;
-  }
-  a {
-    padding: 0;
-  }
-}
 
 .users.follow {
   padding: 0;
@@ -491,4 +481,36 @@ div.stat:last-child {
   color: #2a2627;
   background-color: #C6EADF;
   border-color: #C6EADF;
+}
+
+@media only screen and (max-width:992px) { /* Home Feed collapses s*/
+  aside.user-sidebar {
+    display: none;
+  }
+  main.main-feed {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width:525px) { /* Home Feed image collapses s*/
+  .small-circle-img {
+    width: 15%;
+    display: inline-block;
+    vertical-align: top;
+
+    .small-circle-img img {
+      max-width: 75px;
+      height: auto;
+      display: inline-block;
+      margin: 0 auto;
+      border-radius: 50%;
+    }
+  }
+
+  div.woof-status {
+    width: 80%;
+    display: inline-block;
+    margin-left: 20px;
+    word-wrap: break-word;
+  }
 }
