@@ -33,7 +33,7 @@ textarea {
   }
 }
 
-.container {
+.container-inner-inner {
   max-width: 964px;
 }
 
@@ -488,7 +488,7 @@ div.stat:last-child {
 }
 
 @media only screen and (max-width:992px) { /* Home Feed collapses */
-  .container {
+  .container-inner {
     width: 100%;
   }
   aside.user-sidebar {
@@ -498,9 +498,6 @@ div.stat:last-child {
     width: 100%;
   }
 
-  .navbar-fixed-top {
-
-  }
 }
 
 @media only screen and (max-width:865px) { /* User profile collapses*/
@@ -555,11 +552,22 @@ div.stat:last-child {
 
 }
 
+
+@media only screen and (max-width:770px) { /* Nav collapses s*/
+  .container-inner {
+    width: 100%;
+    margin-top: 117px;
+  }
+
+}
+
+
 @media only screen and (max-width:525px) { /* Home Feed image collapses s*/
   .small-circle-img {
     width: 15%;
     display: inline-block;
     vertical-align: top;
+  }
 
     .small-circle-img img {
       max-width: 75px;
@@ -570,44 +578,13 @@ div.stat:last-child {
     }
 }
 
-
-  div.woof-status {
-    width: 80%;
-    display: inline-block;
-    margin-left: 20px;
-    word-wrap: break-word;
-  }
-}
-
-@media only screen and (max-width:525px) { /* Home Feed image collapses s*/
-  .small-circle-img {
-    width: 15%;
-    display: inline-block;
-    vertical-align: top;
-
-    .small-circle-img img {
-      max-width: 75px;
-      height: auto;
-      display: inline-block;
-      margin: 0 auto;
-      border-radius: 50%;
-    }
-}
-
-
-  div.woof-status {
-    width: 80%;
-    display: inline-block;
-    margin-left: 20px;
-    word-wrap: break-word;
-  }
-}
 
 @media only screen and (max-width:370px) { /* User Stats collapse s*/
   .small-circle-img {
     width: 15%;
     display: inline-block;
     vertical-align: top;
+  }
 
     .small-circle-img img {
       max-width: 75px;
@@ -616,8 +593,6 @@ div.stat:last-child {
       margin: 0 auto;
       border-radius: 50%;
     }
-}
-
 
   div.woof-status {
     width: 80%;
