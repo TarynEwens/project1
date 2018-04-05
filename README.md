@@ -1,5 +1,4 @@
 # Project 1 - WOOFER (It's like Twitter... for dogs!)
-A simple tic tac toe (naughts and crosses) game with a minimalist vibe.
 
 See it in action here: https://wooferproject.herokuapp.com/
 
@@ -37,7 +36,36 @@ It is a social media platform (basically a Twitter clone) but for users to sign 
 - Ruby on Rails
 - Bootstrap
 
-## Approach
+## Scope
+WOOFER - Twitter for Dogs - Woof at your doggo friends!
+Features will include
+- Sign up
+- Sign in via email address
+- Set up profile with photo (uploaded via Cloudinary), name, bio etc.
+- View own profile, and other dogs profile
+- Follow and unfollow other dogs
+- Post 'woofs' - images as well as text if possible.
+- Home feed of 'woofs' from dogs they follow
+- Edit or delete profile
+- If time permits create a likes model, which would allow users to like 'woofs'.
+
+## Object models
+- USER (dogs) have_many WOOFS
+- WOOFS belong_to DOG
+- RELATIONSHIPS belongs_to :follower_id and belongs_to :followed_id
+
+If time permits
+- LIKES belongs_to :liker_id and belongs_to :liked_id
+
+## Wireframes
+Built in Sketch.
+
+![alt text](wireframes/home-loggedout.png "Wireframe - Home Logged Out")
+
+![alt text](wireframes/home-loggedin.png "Wireframe - Home Logged In")
+
+![alt text](wireframes/profile.png "Wireframe - Profile Show")
+
 
 
 ## To do:
