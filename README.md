@@ -5,14 +5,22 @@ See it in action here: https://wooferproject.herokuapp.com/
 
 It is a social media platform (basically a Twitter clone) but for users to sign up on behalf of their dogs and "woof" (instead of "tweet") at their dog friends!
 
-
+![alt text](screenshots/signedout-homepage.png "A screenshot of the WOOFER home page when signed out")
 
 ## How to use
 - Sign up on the home page, update your doggos details, then you're ready to 'woof'!
 - Post your woofs from the home page
+
+![alt text](screenshots/signedin-homepage.png "A screenshot of the WOOFER home page when signed in")
+
 - Find other doggos to follow on the users page
 - View a doggos profile and click 'follow' to add their woofs to your home feed!
+
+![alt text](screenshots/usershow.png "A screenshot of the WOOFER show user page")
+
 - Unfollow if you need, delete embarrassing past tweets, and edit or delete your account at any time (Much disappoint. Many sad.)
+
+![alt text](screenshots/useredit.png "A screenshot of the WOOFER edit user page")
 
 ## Objectives
 - App should have at least 3 models. Currently Users, Woofs & Relationships.
@@ -35,6 +43,7 @@ It is a social media platform (basically a Twitter clone) but for users to sign 
 ## To do:
 - [ ] Add likes model (similarly set up to Relationships) to allow users to like "woofs"
 - [ ] Allow users to upload images with their "woofs"
+- [ ] Add javascript to make logo animated
 
 ## License
 This project is licensed under the MIT license.
