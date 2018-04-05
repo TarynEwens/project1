@@ -28,17 +28,19 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find params[:id]
-    cloudinary = Cloudinary::Uploader.upload( params[ "user" ][ "image" ] )
-    @user.update :image => cloudinary["url"]
-    redirect_to user_path
-  end
+  user = User.find params[:id]
+
+  cloudinary = Cloudinary::Uploader.upload( params[ "user" ][ "image" ] )
+  user.update user_params
+  user.update :image => cloudinary["url"]
+  redirect_to user_path
+
+end
 
 
   def show
     @user = User.find params[:id]
     @woofs = @user.woofs.paginate(page: params[:page])
-
   end
 
   def following
