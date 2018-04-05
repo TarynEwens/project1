@@ -29,7 +29,6 @@ class UsersController < ApplicationController
 
   def update
   user = User.find params[:id]
-
   cloudinary = Cloudinary::Uploader.upload( params[ "user" ][ "image" ] )
   user.update user_params
   user.update :image => cloudinary["url"]
@@ -63,7 +62,7 @@ end
 
   def destroy
    User.find(params[:id]).destroy
-   flash[:success] = "User deleted"
+   # flash[:success] = "User deleted"
    redirect_to root_url
  end
 
@@ -81,11 +80,10 @@ end
      redirect_to(root_url) unless current_user?(@user)
   end
 
+  # Confirms the admin user
   def admin_user
       redirect_to(root_url) unless current_user.admin?
   end
-
-
 
 
 end
