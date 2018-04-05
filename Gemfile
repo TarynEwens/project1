@@ -31,7 +31,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'bootstrap-sass', '3.3.7'
-gem 'bootstrap', '~> 4.0.0'
+gem 'cloudinary'
+gem 'faker'
 gem "will_paginate", "~> 3.0.4"
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'jquery-rails' # USING JQUERY Also need to add this to application.js

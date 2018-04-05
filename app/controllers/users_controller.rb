@@ -28,23 +28,17 @@ class UsersController < ApplicationController
   end
 
   def update
-  @user = User.find(params[:id])
-  if @user.update_attributes(user_params)
-    # Handle a successful update.
-  else
-    render 'edit'
-  end
-end
-
-def update
-    user = User.find params[:id]
-    user.update user_params
+    @user = User.find params[:id]
+    cloudinary = Cloudinary::Uploader.upload( params[ "user" ][ "image" ] )
+    @user.update :image => cloudinary["url"]
     redirect_to user_path
   end
+
 
   def show
     @user = User.find params[:id]
     @woofs = @user.woofs.paginate(page: params[:page])
+
   end
 
   def following

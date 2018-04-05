@@ -4,7 +4,8 @@
 
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <%= form_for @user do |f| %>
+      <%= form_for(@user, :html => { :multipart => true }) do |f| %>
+
         <%= render 'shared/error_messages', object: f.object %>
         <%= f.label :name %>
         <%= f.text_field :name, class: 'form-control' %>
@@ -19,7 +20,8 @@
         <%= f.text_field :location, class: 'form-control' %>
 
         <%= f.label :image %>
-        <%= f.url_field :image, class: 'form-control' %>
+        <%= f.file_field :image, class: 'form-control' %>
+
 
         <BR/>
         <h3>Change Password</h3>

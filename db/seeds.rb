@@ -25,13 +25,13 @@ u3.woofs << w5
 
 users = User.all
 user  = users.first
-following = users[2]
-followers = users[2..3]
+following = users.take(2)
+followers = users.take(5).drop(2)
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
 
 users = User.order(:created_at).take(3)
 50.times do
   content = Faker::Lorem.sentence(5)
-  users.each { |user| user.microposts.create!(content: content) }
+  users.each { |user| user.woofs.create!(status: content) }
 end
