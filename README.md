@@ -32,7 +32,7 @@ It is a social media platform (basically a Twitter clone) but for users to sign 
 
 ## Built With
 - HTML
-- CSS (SCSS)
+- CSS (Sass)
 - Ruby on Rails
 - Bootstrap
 
