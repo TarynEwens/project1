@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   def new
   end
 
+  # Creates a session (logged in)
   def create
     # Find the user based on their email
     @user = User.find_by :email => params[:email]
@@ -19,6 +20,7 @@ class SessionsController < ApplicationController
     end
   end
 
+ # Ends a session (log out)
   def destroy
     log_out if logged_in?
     redirect_to root_path

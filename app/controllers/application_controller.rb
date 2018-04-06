@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :fetch_user
 
   private
+  # Before any action fetch the user params and store in @current_user
   def fetch_user
     @current_user = User.find_by :id => session[:user_id] if session[:user_id].present?
     session[:user_id] = nil unless @current_user.present? # This prevents horrors if you reseed.

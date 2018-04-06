@@ -1,11 +1,13 @@
 class RelationshipsController < ApplicationController
 
+# Creates the follow relationship
   def create
     user = User.find(params[:followed_id])
     @current_user.follow(user)
     redirect_to user
   end
 
+# Ends the follow relationship (unfollow)
   def destroy
     user = Relationship.find(params[:id]).followed
     @current_user.unfollow(user)

@@ -50,8 +50,8 @@ Features will include
 - If time permits create a likes model, which would allow users to like 'woofs'.
 
 ## Object models
-- USER (dogs) have_many WOOFS
-- WOOFS belong_to DOG
+- USER (dogs) has_many WOOFS
+- WOOFS belongs_to DOG
 - RELATIONSHIPS belongs_to :follower_id and belongs_to :followed_id
 
 If time permits
@@ -126,10 +126,12 @@ Currently, there is a really cool "feature" where every time you edit your profi
 
 
 ## To do:
+- [ ] Give dogs a default name when they sign up (Doge)
 - [ ] Rebuild navigation to fix issues on mobile devices
 - [ ] Add likes model (similarly set up to Relationships) to allow users to like "woofs"
 - [ ] Allow users to upload images with their "woofs"
 - [ ] Add javascript to make logo animated
+- [ ] Notifications (this might be a huge call)
 
 
 ## License
