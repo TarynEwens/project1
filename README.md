@@ -126,12 +126,14 @@ Currently, there is a really cool "feature" where every time you edit your profi
 
 
 ## To do:
-- [ ] Give dogs a default name when they sign up (Doge)
 - [ ] Rebuild navigation to fix issues on mobile devices
+- [ ] Add a default name and image to dogs on sign up in case they don't set up their profile immediately or at all
 - [ ] Add likes model (similarly set up to Relationships) to allow users to like "woofs"
 - [ ] Allow users to upload images with their "woofs"
 - [ ] Add javascript to make logo animated
+- [ ] Search function to search through 'woofs' and users
 - [ ] Notifications (this might be a huge call)
+- [ ] Fix edit form so users don't have to upload a new photo every time
 
 
 ## License

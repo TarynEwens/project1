@@ -15,5 +15,4 @@ Rails.application.routes.draw do
  end
 
  resources :relationships
-  # See rails guide for routing, in particular nested routes
 end
