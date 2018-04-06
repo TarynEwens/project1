@@ -109,16 +109,16 @@ end
 This was definitely a hard one to understand, particularly with how the followers and following gets displayed on the show_follow page.
 
 
-I decided to challenge myself by using Bootstrap which I'd never used before, but quickly came to realise that while Bootstrap is amazing to get the front end up and running - when it comes to the level of customisation I was trying to do, it became quite challenging!
+I decided to challenge myself by using Bootstrap which I'd never used a Framework before, but quickly came to realise that while Bootstrap is amazing to get the front end up and running - when it comes to the level of customisation I was trying to do, it became quite challenging!
 
 In terms of design, I put together some wireframes (seen above) before I touched any CSS and based the design partly on the Bootstrap set up. I decided on the graphic I would use on the home page, and pulled colours from that to create the colour scheme used throughout the site.
 
-Looking back, I probably wouldn't have used Bootstrap had I known the challenge it would have been. I had to spend a lot of time on the CSS and working on getting the website to be responsive. There are still some minor issues (such as the navigation covering the content on mobile devices) which I will need to fix.
+Looking back, I probably wouldn't have used Bootstrap had I known the challenge it would have been. I had to spend a lot of time on the CSS and working on getting the website to be responsive. There are still some minor issues (such as the navigation covering the content on mobile devices) which I will need to fix. Lesson learnt.
 
 
 My next challenge was implementing the Cloudinary media management platform to enable users to upload photos. I had previously implemented some User helpers which told the browser to display the users image if it exists, else display a default image. This caused problems when adding Cloudinary and resulted in me having to remove the helpers.
 
-Cloudinary was still incredibly challenging and it took a couple of days to get it working. I had intended to allow users to upload images with their "woofs", but after the 2 days it took to get their profile images working, I had to postpone that feature. I was very grateful to Winnie and Monique in my class who worked through the Cloudinary with me - I think I would have spent a whole extra day on it without them!
+Cloudinary was still incredibly challenging and it took a couple of days to get it working. I had intended to allow users to upload images with their "woofs", but after the 2 days it took to get their profile images working, I had to postpone that feature. I was very grateful to Winnie and Monique in my class who worked through the Cloudinary with me - I think I would have spent a whole extra day on it without them! Lesson learnt from this challenge was to implement things like this at the beginning of the project, rather than try to add them in at the end.
 
 There are still some features I didn't get time to implement, and some features (see bugs) that I would like to change.
 
